@@ -1,0 +1,222 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  transform: scale(1.05);
+  animation: none;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  animation: kenburns 6s ease forwards;
+}
+
+@keyframes kenburns {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1); }
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.3) 0%,
+    rgba(0,0,0,0.55) 50%,
+    rgba(10,10,10,0.9) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 900px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(224, 0, 122, 0.15);
+  border: 1px solid var(--fucsia);
+  color: var(--fucsia);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(5rem, 15vw, 11rem);
+  line-height: 0.9;
+  color: var(--blanco);
+  letter-spacing: 8px;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+.hero-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  color: rgba(245,245,245,0.85);
+  letter-spacing: 2px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--fucsia);
+  margin: 20px auto;
+}
+
+.hero-location {
+  font-size: 0.85rem;
+  color: rgba(245,245,245,0.6);
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--fucsia);
+  color: var(--blanco);
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  border: 2px solid var(--fucsia);
+}
+
+.btn-primary:hover {
+  background: var(--fucsia-claro);
+  border-color: var(--fucsia-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(224, 0, 122, 0.5);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--blanco);
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+  border: 2px solid rgba(245,245,245,0.4);
+}
+
+.btn-secondary:hover {
+  border-color: var(--fucsia);
+  color: var(--fucsia-claro);
+  transform: translateY(-2px);
+}
+
+.btn-ig {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.btn-ig:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(220,39,67,0.5);
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--fucsia);
+  width: 24px;
+  border-radius: 4px;
+}
+
+.hero-scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 2;
+  opacity: 0.5;
+}
+
+.hero-scroll-hint span {
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.scroll-arrow {
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--blanco), transparent);
+  animation: scrollDown 1.5s ease infinite;
+}
+
+@keyframes scrollDown {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}

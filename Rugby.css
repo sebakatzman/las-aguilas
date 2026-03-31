@@ -1,0 +1,229 @@
+.rugby {
+  background: var(--negro);
+  padding: 0 0 80px;
+}
+
+.rugby-banner {
+  position: relative;
+  height: 380px;
+  background-image: url('/Fotos/PRIMERA2021.jpg');
+  background-size: cover;
+  background-position: center top;
+  margin-bottom: 80px;
+}
+
+.rugby-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(10,10,10,0.92));
+}
+
+.rugby-banner-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.deporte-badge {
+  display: inline-block;
+  background: rgba(224, 0, 122, 0.15);
+  border: 1px solid var(--fucsia-claro);
+  color: var(--fucsia-claro);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.rugby-banner-content h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--blanco);
+  letter-spacing: 6px;
+}
+
+.rugby-banner-content p {
+  color: rgba(245,245,245,0.7);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 12px;
+}
+
+.rugby-staff,
+.rugby-categorias,
+.rugby-galeria {
+  margin-bottom: 72px;
+}
+
+.rugby-staff h3,
+.rugby-categorias h3,
+.rugby-galeria h3 {
+  font-size: 2.2rem;
+  color: var(--fucsia);
+  letter-spacing: 3px;
+  margin-bottom: 32px;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.staff-card {
+  background: var(--gris-oscuro);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.staff-card:hover {
+  border-color: rgba(224, 0, 122, 0.4);
+  transform: translateY(-4px);
+}
+
+.staff-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fucsia-oscuro), var(--fucsia-claro));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.staff-rol {
+  font-size: 0.7rem;
+  color: var(--fucsia);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.staff-nombre {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.staff-card p {
+  font-size: 0.8rem;
+  color: var(--gris-claro);
+  line-height: 1.5;
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.categoria-card {
+  background: var(--gris-oscuro);
+  border-left: 3px solid var(--fucsia);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 18px;
+  transition: border-color 0.3s, transform 0.25s;
+}
+
+.categoria-card:hover {
+  border-left-color: var(--fucsia-claro);
+  transform: translateX(4px);
+}
+
+.categoria-nombre {
+  display: block;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.3rem;
+  color: var(--fucsia);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.categoria-card p {
+  font-size: 0.82rem;
+  color: rgba(245,245,245,0.65);
+  line-height: 1.5;
+}
+
+.galeria-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.galeria-tabs button {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.15);
+  color: var(--gris-claro);
+  padding: 10px 28px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.galeria-tabs button.active,
+.galeria-tabs button:hover {
+  border-color: var(--fucsia);
+  color: var(--fucsia);
+  background: rgba(224, 0, 122, 0.08);
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.galeria-item {
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.3s;
+  filter: brightness(0.9);
+}
+
+.galeria-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+@media (max-width: 900px) {
+  .staff-grid { grid-template-columns: repeat(2, 1fr); }
+  .categorias-grid { grid-template-columns: repeat(2, 1fr); }
+  .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .staff-grid { grid-template-columns: 1fr; }
+  .categorias-grid { grid-template-columns: 1fr; }
+  .galeria-grid { grid-template-columns: 1fr; }
+}

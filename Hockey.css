@@ -1,0 +1,144 @@
+.hockey {
+  background: var(--gris-oscuro);
+  padding: 0 0 80px;
+}
+
+.hockey-banner {
+  position: relative;
+  height: 380px;
+  background-image: url('/Fotos/3.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 80px;
+}
+
+.hockey-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(26,26,26,0.95));
+}
+
+.hockey-banner-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hockey-badge {
+  display: inline-block;
+  background: rgba(224, 0, 122, 0.15);
+  border: 1px solid var(--fucsia);
+  color: var(--fucsia);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 6px 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.hockey-banner-content h2 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: var(--blanco);
+  letter-spacing: 6px;
+}
+
+.hockey-banner-content p {
+  color: rgba(245,245,245,0.7);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-top: 12px;
+}
+
+.hockey-subcomision,
+.hockey-staff,
+.hockey-categorias,
+.hockey-galeria {
+  margin-bottom: 72px;
+}
+
+.hockey-subcomision h3,
+.hockey-staff h3,
+.hockey-categorias h3,
+.hockey-galeria h3 {
+  font-size: 2.2rem;
+  color: var(--fucsia);
+  letter-spacing: 3px;
+  margin-bottom: 32px;
+}
+
+.subcomision-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.subcomision-card {
+  background: var(--negro);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.subcomision-card:hover {
+  border-color: rgba(224, 0, 122, 0.4);
+  transform: translateY(-4px);
+}
+
+.sub-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fucsia-oscuro), var(--fucsia-claro));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.sub-cargo {
+  font-size: 0.7rem;
+  color: var(--fucsia);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.sub-nombre {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(245,245,245,0.8);
+}
+
+.hockey-avatar {
+  background: linear-gradient(135deg, var(--fucsia-oscuro), var(--fucsia-claro)) !important;
+}
+
+.hockey-cat {
+  border-left-color: var(--fucsia) !important;
+}
+
+.hockey-cat:hover {
+  border-left-color: var(--fucsia-claro) !important;
+}
+
+@media (max-width: 900px) {
+  .subcomision-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .subcomision-grid { grid-template-columns: 1fr; }
+}

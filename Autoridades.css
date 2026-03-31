@@ -1,0 +1,60 @@
+.autoridades {
+  background: var(--gris-oscuro);
+}
+
+.comision-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.comision-card {
+  background: var(--negro);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.comision-card:hover {
+  border-color: rgba(224, 0, 122, 0.4);
+  transform: translateY(-4px);
+}
+
+.comision-icon {
+  font-size: 2rem;
+}
+
+.comision-cargo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  color: var(--fucsia);
+  letter-spacing: 2px;
+}
+
+.comision-nombre {
+  font-size: 0.85rem;
+  color: rgba(245,245,245,0.7);
+  font-weight: 500;
+}
+
+.autoridades-placeholder {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--gris-claro);
+  font-style: italic;
+}
+
+@media (max-width: 900px) {
+  .comision-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .comision-grid { grid-template-columns: 1fr; }
+}
