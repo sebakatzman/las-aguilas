@@ -1,0 +1,54 @@
+services:
+  # Reverse proxy que enruta por dominio y sirve HTTPS
+  nginx-proxy:
+    image: nginxproxy/nginx-proxy:alpine
+    container_name: nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - proxy_conf:/etc/nginx/conf.d
+      - proxy_vhost:/etc/nginx/vhost.d
+      - proxy_html:/usr/share/nginx/html
+      - proxy_certs:/etc/nginx/certs:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  # Emite y renueva certificados Let's Encrypt automáticamente
+  acme-companion:
+    image: nginxproxy/acme-companion
+    container_name: nginx-proxy-acme
+    restart: unless-stopped
+    depends_on:
+      - nginx-proxy
+    environment:
+      - DEFAULT_EMAIL=${LETSENCRYPT_EMAIL}
+    volumes:
+      - proxy_conf:/etc/nginx/conf.d
+      - proxy_vhost:/etc/nginx/vhost.d
+      - proxy_html:/usr/share/nginx/html
+      - proxy_certs:/etc/nginx/certs
+      - acme_state:/etc/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+
+  # La página del club (React build servido por nginx)
+  app:
+    build: .
+    container_name: las-aguilas-app
+    restart: unless-stopped
+    expose:
+      - "80"
+    environment:
+      - VIRTUAL_HOST=${DOMAIN}
+      - LETSENCRYPT_HOST=${DOMAIN}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+    depends_on:
+      - nginx-proxy
+      - acme-companion
+
+volumes:
+  proxy_conf:
+  proxy_vhost:
+  proxy_html:
+  proxy_certs:
+  acme_state:

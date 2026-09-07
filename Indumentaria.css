@@ -96,7 +96,7 @@
   font-size: 0.95rem;
   color: rgba(245,245,245,0.7);
   line-height: 1.7;
-  max-width: 500px;
+  max-width: 620px;
   margin: 0 auto 32px;
 }
 
@@ -107,8 +107,8 @@
   flex-wrap: wrap;
 }
 
-.btn-ig-cta {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+.btn-whatsapp-cta {
+  background: #25d366;
   color: white;
   padding: 14px 28px;
   border-radius: 6px;
@@ -118,27 +118,9 @@
   transition: all 0.25s;
 }
 
-.btn-ig-cta:hover {
+.btn-whatsapp-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(220,39,67,0.4);
-}
-
-.btn-mail-cta {
-  background: transparent;
-  border: 2px solid var(--fucsia);
-  color: var(--fucsia);
-  padding: 14px 28px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  transition: all 0.25s;
-}
-
-.btn-mail-cta:hover {
-  background: var(--fucsia);
-  color: white;
-  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37,211,102,0.4);
 }
 
 @media (max-width: 900px) {

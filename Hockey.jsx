@@ -11,6 +11,7 @@ const categorias = [
 ]
 
 const fotosHockey = [
+  '/Fotos/nacionalhockey.jpg',
   '/Fotos/1.jpg',
   '/Fotos/3.jpg',
   '/Fotos/5.jpg',
@@ -43,6 +44,17 @@ export default function Hockey() {
       </div>
 
       <div className="container">
+        {/* Logro destacado */}
+        <div className="hockey-logro">
+          <img src="/Fotos/nacionalhockey.jpg" alt="Sub-14 Campeonas Nacionales" />
+          <div className="hockey-logro-overlay" />
+          <div className="hockey-logro-texto">
+            <span className="hockey-logro-badge">🏆 ¡Campeonas!</span>
+            <h3>Sub-14 Campeonas Nacionales</h3>
+            <p>Las chicas de M14 se consagraron campeonas nacionales, un logro histórico para el hockey de Las Águilas.</p>
+          </div>
+        </div>
+
         {/* Subcomisión */}
         <div className="hockey-subcomision">
           <h3>Subcomisión de Hockey</h3>

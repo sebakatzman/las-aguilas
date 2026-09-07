@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Rugby', href: '#rugby' },
   { label: 'Hockey', href: '#hockey' },
   { label: 'Títulos', href: '#titulos' },
+  { label: 'Novedades', href: '#novedades' },
   { label: 'Indumentaria', href: '#indumentaria' },
   { label: 'Sponsors', href: '#sponsors' },
   { label: 'Contacto', href: '#administracion' },

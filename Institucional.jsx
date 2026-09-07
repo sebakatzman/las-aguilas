@@ -71,22 +71,27 @@ export default function Institucional() {
           <h3>Presidentes del Club</h3>
           <div className="presidentes-lista">
             {[
-              { nombre: 'Juan Pérez', periodo: '1982 – 1986' },
-              { nombre: 'Mario García', periodo: '1986 – 1992' },
-              { nombre: 'Roberto López', periodo: '1992 – 1998' },
-              { nombre: 'Andrés Torres', periodo: '1998 – 2004' },
-              { nombre: 'Miguel Ángel Sosa', periodo: '2004 – 2010' },
-              { nombre: 'Daniel Fernández', periodo: '2010 – 2016' },
-              { nombre: 'Gallego Requejado', periodo: '2016 – 2019' },
-              { nombre: 'Esteban Moscoso', periodo: '2025 – presente' },
+              { nombre: 'Federico Sciurano', periodo: '1990 – 1992' },
+              { nombre: 'Horacio Roque Vedia', periodo: '1992 – 1997' },
+              { nombre: 'José Monte de Oca', periodo: '1997 – 2000' },
+              { nombre: 'Jorge Dante Caldelari', periodo: '2000 – 2002' },
+              { nombre: 'Francisco Lerario', periodo: '2002 – 2004' },
+              { nombre: 'Mariana Begue', periodo: '2004 – 2006' },
+              { nombre: 'Francisco Lerario', periodo: '2006 – 2011' },
+              { nombre: 'Juan Castro Videla', periodo: '2011 – 2012' },
+              { nombre: 'Alejandro Aguirre Gonzalez', periodo: '2012 – 2013' },
+              { nombre: 'Maximilano Gonzalez', periodo: '2013 – 2014' },
+              { nombre: 'Juan Castro Videla', periodo: '2014 – 2016' },
+              { nombre: 'Ramiro Requejado', periodo: '2016 – 2020' },
+              { nombre: 'Sebastián Robelin', periodo: '2020 – 2024' },
+              { nombre: 'Esteban Moscoso', periodo: '2024 – 2026' },
             ].map(p => (
-              <div key={p.nombre} className="presidente-item">
+              <div key={`${p.nombre}-${p.periodo}`} className="presidente-item">
                 <span className="presidente-nombre">{p.nombre}</span>
                 <span className="presidente-periodo">{p.periodo}</span>
               </div>
             ))}
           </div>
-          <p className="inst-placeholder">* Nómina completa y definitiva a confirmar por el club.</p>
         </div>
       </div>
     </section>
