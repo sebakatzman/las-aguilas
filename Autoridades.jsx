@@ -2,18 +2,16 @@ import React from 'react'
 import './Autoridades.css'
 
 const comision = [
-  { cargo: 'Presidente', nombre: 'Nombre a confirmar', icon: '👑' },
-  { cargo: 'Vicepresidente', nombre: 'Nombre a confirmar', icon: '🦅' },
-  { cargo: 'Secretario', nombre: 'Nombre a confirmar', icon: '📋' },
-  { cargo: 'Prosecretario', nombre: 'Nombre a confirmar', icon: '📋' },
-  { cargo: 'Tesorero', nombre: 'Nombre a confirmar', icon: '💼' },
-  { cargo: 'Protesorero', nombre: 'Nombre a confirmar', icon: '💼' },
-  { cargo: 'Vocal Titular 1', nombre: 'Nombre a confirmar', icon: '⚡' },
-  { cargo: 'Vocal Titular 2', nombre: 'Nombre a confirmar', icon: '⚡' },
-  { cargo: 'Vocal Titular 3', nombre: 'Nombre a confirmar', icon: '⚡' },
-  { cargo: 'Vocal Suplente 1', nombre: 'Nombre a confirmar', icon: '⚡' },
-  { cargo: 'Vocal Suplente 2', nombre: 'Nombre a confirmar', icon: '⚡' },
-  { cargo: 'Revisor de Cuentas', nombre: 'Nombre a confirmar', icon: '🔍' },
+  { cargo: 'Presidente', nombre: 'Esteban Moscoso', icon: '👑' },
+  { cargo: 'Vicepresidente', nombre: 'Germán Thompson', icon: '🦅' },
+  { cargo: 'Secretario', nombre: 'Juan Pablo Castro Videla', icon: '📋' },
+  { cargo: 'Pro Secretaria', nombre: 'María Castro Videla', icon: '📋' },
+  { cargo: 'Tesorero', nombre: 'Tolkar Lacaze', icon: '💼' },
+  { cargo: 'Pro Tesorero', nombre: 'Ramiro Cofreces', icon: '💼' },
+  { cargo: 'Vocal 1°', nombre: 'Julieta Ponce', icon: '⚡' },
+  { cargo: 'Vocal 2°', nombre: 'Victoria Magni', icon: '⚡' },
+  { cargo: 'Vocal 2° Suplente', nombre: 'Carlos Leonardi', icon: '⚡' },
+  { cargo: '1° Revisor de Cuentas', nombre: 'Marcelo Salazar', icon: '🔍' },
 ]
 
 export default function Autoridades() {
@@ -22,7 +20,7 @@ export default function Autoridades() {
       <div className="container">
         <h2 className="section-title">Autoridades</h2>
         <div className="divider" />
-        <p className="section-subtitle">Comisión Directiva — Quiénes somos</p>
+        <p className="section-subtitle">Comisión Directiva 2024 / 2026</p>
 
         <div className="comision-grid">
           {comision.map((m, i) => (
@@ -33,10 +31,6 @@ export default function Autoridades() {
             </div>
           ))}
         </div>
-
-        <p className="autoridades-placeholder">
-          * Los datos de la comisión directiva serán proporcionados por el club próximamente.
-        </p>
       </div>
     </section>
   )

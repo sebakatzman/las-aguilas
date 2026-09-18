@@ -2,22 +2,29 @@ import React, { useState } from 'react'
 import './Rugby.css'
 
 const categorias = [
-  { nombre: 'M8 / M10', descripcion: 'Los más pequeños del club, aprenden los valores del rugby desde chicos.' },
-  { nombre: 'M12', descripcion: 'Categoría infantil con foco en el juego y el compañerismo.' },
-  { nombre: 'M14', descripcion: 'Desarrollo técnico y táctico en etapa de formación.' },
-  { nombre: 'M16', descripcion: 'Competencia regional con gran nivel de exigencia.' },
-  { nombre: 'M18', descripcion: 'Transición al rugby adulto. Campeones patagónicos.' },
-  { nombre: 'Primera División', descripcion: 'El equipo principal del club. Orgullo de Las Águilas.' },
-  { nombre: 'Veteranos', descripcion: 'Los históricos del club que siguen jugando con pasión.' },
+  { nombre: 'M6 / M8', responsables: 'María José "Majin" Fernández' },
+  { nombre: 'M10 / M12', responsables: 'Lucas Cerra y Ailu Subiabre' },
+  { nombre: 'M14', responsables: 'Efraín Gonzáles y Jeremías Covacich' },
+  { nombre: 'M16', responsables: 'Ángel "Oso" Figueroa' },
+  { nombre: 'M18', responsables: 'Matías Salvado y Carlos Casabella' },
+  { nombre: 'Intermedia y Primera Masculino', responsables: 'Bruno Pani — Ramiro Cofreces' },
+  { nombre: 'Primera Femenino', responsables: 'Mariano Paredes' },
 ]
 
+const staff = [
+  { rol: 'Director Deportivo', nombre: 'Diego "Kun" Acuña', desc: 'Responsable del desarrollo deportivo del club.' },
+  { rol: 'Head Coach Primera', nombre: 'Bruno Pani', desc: 'Entrenador principal del equipo de primera división.' },
+  { rol: 'Referente de Infantiles', nombre: 'María José "Majin" Fernández', desc: 'Referente de las categorías infantiles.' },
+]
+
+// Galería: reemplazar por fotos sin resultados escritos (evitar capturas de Instagram).
 const fotosActuales = [
   '/Fotos/PRIMERA2021.jpg',
   '/Fotos/PRIMERA2022 COMODORO.jpg',
-  '/Fotos/M162022.jpg',
+  '/Fotos/rug3.jpg',
   '/Fotos/M182020.jpg',
   '/Fotos/INFANTILES2020.jpg',
-  '/Fotos/INTER2022.jpg',
+  '/Fotos/rug6.jpg',
 ]
 
 const fotosHistoricas = [
@@ -48,12 +55,7 @@ export default function Rugby() {
         <div className="rugby-staff">
           <h3>Cuerpo Técnico</h3>
           <div className="staff-grid">
-            {[
-              { rol: 'Director Deportivo', nombre: 'A confirmar', desc: 'Responsable del desarrollo deportivo del club.' },
-              { rol: 'Head Coach Primera', nombre: 'A confirmar', desc: 'Entrenador principal del equipo de primera división.' },
-              { rol: 'Entrenador Formativas', nombre: 'A confirmar', desc: 'A cargo de todas las categorías juveniles.' },
-              { rol: 'Preparador Físico', nombre: 'A confirmar', desc: 'Acondicionamiento físico de todos los planteles.' },
-            ].map((s, i) => (
+            {staff.map((s, i) => (
               <div key={i} className="staff-card">
                 <div className="staff-avatar">{s.rol.charAt(0)}</div>
                 <span className="staff-rol">{s.rol}</span>
@@ -71,7 +73,7 @@ export default function Rugby() {
             {categorias.map((c, i) => (
               <div key={i} className="categoria-card">
                 <span className="categoria-nombre">{c.nombre}</span>
-                <p>{c.descripcion}</p>
+                <p>{c.responsables}</p>
               </div>
             ))}
           </div>

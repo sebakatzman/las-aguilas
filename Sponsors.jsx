@@ -1,22 +1,20 @@
 import React from 'react'
 import './Sponsors.css'
 
-const mainSponsors = [
-  { nombre: 'Sponsor Principal 1', descripcion: 'Main Sponsor del Club Las Águilas', emoji: '⭐' },
-  { nombre: 'Sponsor Principal 2', descripcion: 'Main Sponsor del Club Las Águilas', emoji: '⭐' },
-  { nombre: 'Sponsor Principal 3', descripcion: 'Main Sponsor del Club Las Águilas', emoji: '⭐' },
-]
+// Orden = orden de aporte (los que más pagan primero). Archivos en public/Fotos/.
+const mainSponsors = Array.from({ length: 11 }, (_, i) => `/Fotos/log${i + 1}.png`)
 
-const sponsorsPublicitarios = [
-  { nombre: 'Empresa A', emoji: '🏢' },
-  { nombre: 'Empresa B', emoji: '🏢' },
-  { nombre: 'Empresa C', emoji: '🏢' },
-  { nombre: 'Empresa D', emoji: '🏢' },
-  { nombre: 'Empresa E', emoji: '🏢' },
-  { nombre: 'Empresa F', emoji: '🏢' },
-]
+// Publicitarios 12–37: 12–32 son <n>.png, 33–37 son log<n>.png.
+const sponsorsPublicitarios = Array.from({ length: 37 - 12 + 1 }, (_, i) => {
+  const n = i + 12
+  return n <= 32 ? `/Fotos/${n}.png` : `/Fotos/log${n}.png`
+})
 
 export default function Sponsors() {
+  // Duplicamos la lista para que el loop del marquee sea continuo (sin salto).
+  const mainLoop = [...mainSponsors, ...mainSponsors]
+  const pubLoop = [...sponsorsPublicitarios, ...sponsorsPublicitarios]
+
   return (
     <section id="sponsors" className="sponsors">
       <div className="container">
@@ -28,27 +26,28 @@ export default function Sponsors() {
         <div className="sponsors-main-title">
           <span>🏆 Main Sponsors</span>
         </div>
-        <div className="main-sponsors-grid">
-          {mainSponsors.map((s, i) => (
-            <div key={i} className="main-sponsor-card">
-              <div className="sponsor-logo-placeholder">{s.emoji}</div>
-              <h4>{s.nombre}</h4>
-              <p>{s.descripcion}</p>
-            </div>
-          ))}
+        <div className="sponsors-marquee main">
+          <div className="marquee-track">
+            {mainLoop.map((src, i) => (
+              <div key={`${src}-${i}`} className="marquee-item">
+                <img src={src} alt={`Main sponsor ${(i % mainSponsors.length) + 1}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Sponsors Publicitarios */}
         <div className="sponsors-main-title" style={{ marginTop: 60 }}>
           <span>📢 Sponsors Publicitarios</span>
         </div>
-        <div className="sponsors-pub-grid">
-          {sponsorsPublicitarios.map((s, i) => (
-            <div key={i} className="sponsor-pub-card">
-              <div className="sponsor-pub-logo">{s.emoji}</div>
-              <span>{s.nombre}</span>
-            </div>
-          ))}
+        <div className="sponsors-marquee pub reverse">
+          <div className="marquee-track">
+            {pubLoop.map((src, i) => (
+              <div key={`${src}-${i}`} className="marquee-item">
+                <img src={src} alt={`Sponsor ${(i % sponsorsPublicitarios.length) + 12}`} loading="lazy" />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* CTA Ser Sponsor */}
@@ -56,9 +55,9 @@ export default function Sponsors() {
           <div className="sponsor-cta-inner">
             <h3>¿Querés ser sponsor de Las Águilas?</h3>
             <p>
-              Asociá tu marca al club de rugby y hockey más austral del planeta. 
-              Formá parte de una institución con más de 40 años de historia, 
-              presencia en toda la Patagonia y una comunidad fiel y apasionada.
+              Asociá tu marca al club de rugby y hockey más austral del Mundo.
+              Formá parte de una institución con historia, presencia en toda la
+              Patagonia y una comunidad fiel y apasionada.
             </p>
             <div className="sponsor-benefits">
               <div className="benefit">
@@ -78,15 +77,16 @@ export default function Sponsors() {
                 <p>Presencia en eventos del club</p>
               </div>
             </div>
-            <a href="mailto:contacto@lasaguilas.com.ar" className="btn-ser-sponsor">
+            <a
+              href="https://wa.me/5492901465578?text=Hola%2C%20quiero%20ser%20sponsor%20de%20Las%20%C3%81guilas"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ser-sponsor"
+            >
               Quiero ser Sponsor →
             </a>
           </div>
         </div>
-
-        <p className="sponsors-placeholder">
-          * Los logos de sponsors reales serán incorporados próximamente.
-        </p>
       </div>
     </section>
   )

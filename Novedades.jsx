@@ -65,7 +65,7 @@ export default function Novedades() {
             <h3>Plaza "Piedra de los Deseos"</h3>
             <p>
               El 03/02/2026 inauguramos la Plaza, gracias a la colaboración de las familias
-              de los Socios: Bongiovani, Funes y Begue.
+              de los Socios: Bongiovanni, Funes y Begue.
             </p>
 
             <div className="novedad-galeria plaza-galeria">

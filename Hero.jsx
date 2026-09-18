@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import './Hero.css'
 
+// Slides alternados rugby / hockey / rugby / hockey ...
+// Reemplazar por las fotos definitivas manteniendo el orden alternado.
 const slides = [
-  '/Fotos/_DSC9629.JPG',
-  '/Fotos/_DSC9759.JPG',
-  '/Fotos/_DSC9892.JPG',
-  '/Fotos/1.jpg',
-  '/Fotos/2.jpg',
+  '/Fotos/_DSC9629.JPG',        // rugby
+  '/Fotos/nacionalhockey.jpg',  // hockey
+  '/Fotos/_DSC9759.JPG',        // rugby
+  '/Fotos/1.jpg',               // hockey
+  '/Fotos/_DSC9892.JPG',        // rugby
+  '/Fotos/3.jpg',               // hockey
 ]
 
 export default function Hero() {
@@ -30,9 +33,9 @@ export default function Hero() {
       ))}
       <div className="hero-overlay" />
       <div className="hero-content">
-        <div className="hero-badge">Fundado en 1982</div>
+        <div className="hero-badge">Fundado en 1990</div>
         <h1 className="hero-title">LAS ÁGUILAS</h1>
-        <p className="hero-tagline">El Club de Rugby y Hockey<br />más Austral del Planeta</p>
+        <p className="hero-tagline">El Club de Rugby y Hockey<br />más Austral del Mundo</p>
         <div className="hero-divider" />
         <p className="hero-location">📍 Ushuaia, Tierra del Fuego — Patagonia Argentina</p>
         <div className="hero-buttons">
@@ -51,7 +54,7 @@ export default function Hero() {
             Hockey
           </a>
           <a
-            href="https://www.instagram.com"
+            href="https://www.instagram.com/clublasaguilas/"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-ig"

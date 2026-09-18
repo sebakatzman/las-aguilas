@@ -7,7 +7,6 @@ const navLinks = [
   { label: 'Autoridades', href: '#autoridades' },
   { label: 'Rugby', href: '#rugby' },
   { label: 'Hockey', href: '#hockey' },
-  { label: 'Títulos', href: '#titulos' },
   { label: 'Novedades', href: '#novedades' },
   { label: 'Indumentaria', href: '#indumentaria' },
   { label: 'Sponsors', href: '#sponsors' },
@@ -51,7 +50,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/clublasaguilas/"
               target="_blank"
               rel="noopener noreferrer"
               className="navbar-ig"

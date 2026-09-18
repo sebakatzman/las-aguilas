@@ -2,31 +2,38 @@ import React, { useState } from 'react'
 import './Hockey.css'
 
 const categorias = [
-  { nombre: 'Sub-10', descripcion: 'Iniciación al hockey sobre césped con juego y alegría.' },
-  { nombre: 'Sub-12', descripcion: 'Desarrollo de habilidades técnicas básicas.' },
-  { nombre: 'Sub-14', descripcion: 'Competencia zonal con crecimiento constante.' },
-  { nombre: 'Sub-16', descripcion: 'Alto nivel de exigencia técnica y física.' },
-  { nombre: 'Sub-18', descripcion: 'Preparación para el hockey mayor.' },
-  { nombre: 'Primera División', descripcion: 'El equipo femenino más austral del país.' },
+  { nombre: 'Sub 6 / Sub 8', responsables: 'Anahí Hernández, Leila Pérez, Luciana Álvarez, Karen Molina' },
+  { nombre: 'Sub 10', responsables: 'Pamela Toledo' },
+  { nombre: 'Sub 12', responsables: 'Pamela Toledo' },
+  { nombre: 'Sub 14', responsables: 'Fernando Obregón — Bárbara Hotz' },
+  { nombre: 'Sub 16', responsables: 'Fernando Obregón' },
+  { nombre: 'Intermedia', responsables: 'Leonardo' },
+  { nombre: 'Primera', responsables: 'Fernando Obregón' },
+  { nombre: 'Mamis', responsables: 'Fernando Temporetti' },
 ]
 
+const staff = [
+  { rol: 'Director Deportivo', nombre: 'Fernando Obregón', desc: 'Responsable del desarrollo deportivo del hockey.' },
+]
+
+// Galería hockey — fotos actuales enviadas por el club.
 const fotosHockey = [
-  '/Fotos/nacionalhockey.jpg',
-  '/Fotos/1.jpg',
-  '/Fotos/3.jpg',
-  '/Fotos/5.jpg',
-  '/Fotos/7.jpg',
-  '/Fotos/9.jpg',
-  '/Fotos/11.jpg',
+  '/Fotos/hok1.jpg',
+  '/Fotos/hok2.JPG',
+  '/Fotos/hok3.jpg',
+  '/Fotos/hok4.jpg',
+  '/Fotos/hok5.jpg',
+  '/Fotos/hok6.jpg',
 ]
 
+// Placeholder hasta que el club provea fotos históricas de hockey.
 const fotosHistoricasHockey = [
-  '/Fotos/1.jpg',
-  '/Fotos/3.jpg',
-  '/Fotos/5.jpg',
-  '/Fotos/7.jpg',
-  '/Fotos/9.jpg',
-  '/Fotos/11.jpg',
+  '/Fotos/hok1.jpg',
+  '/Fotos/hok2.JPG',
+  '/Fotos/hok3.jpg',
+  '/Fotos/hok4.jpg',
+  '/Fotos/hok5.jpg',
+  '/Fotos/hok6.jpg',
 ]
 
 export default function Hockey() {
@@ -46,31 +53,12 @@ export default function Hockey() {
       <div className="container">
         {/* Logro destacado */}
         <div className="hockey-logro">
-          <img src="/Fotos/nacionalhockey.jpg" alt="Sub-14 Campeonas Nacionales" />
+          <img src="/Fotos/nacionalhockey.jpg" alt="Sub 14 Campeonas Nacionales" />
           <div className="hockey-logro-overlay" />
           <div className="hockey-logro-texto">
             <span className="hockey-logro-badge">🏆 ¡Campeonas!</span>
-            <h3>Sub-14 Campeonas Nacionales</h3>
-            <p>Las chicas de M14 se consagraron campeonas nacionales, un logro histórico para el hockey de Las Águilas.</p>
-          </div>
-        </div>
-
-        {/* Subcomisión */}
-        <div className="hockey-subcomision">
-          <h3>Subcomisión de Hockey</h3>
-          <div className="subcomision-grid">
-            {[
-              { cargo: 'Presidenta de Subcomisión', nombre: 'A confirmar' },
-              { cargo: 'Secretaria', nombre: 'A confirmar' },
-              { cargo: 'Tesorera', nombre: 'A confirmar' },
-              { cargo: 'Vocal', nombre: 'A confirmar' },
-            ].map((m, i) => (
-              <div key={i} className="subcomision-card">
-                <div className="sub-avatar">{m.cargo.charAt(0)}</div>
-                <span className="sub-cargo">{m.cargo}</span>
-                <span className="sub-nombre">{m.nombre}</span>
-              </div>
-            ))}
+            <h3>Sub 14 Campeonas Nacionales</h3>
+            <p>Las chicas de Sub 14 se consagraron campeonas nacionales, un logro histórico para el hockey de Las Águilas.</p>
           </div>
         </div>
 
@@ -78,12 +66,7 @@ export default function Hockey() {
         <div className="hockey-staff">
           <h3>Cuerpo Técnico</h3>
           <div className="staff-grid">
-            {[
-              { rol: 'Directora Deportiva', nombre: 'A confirmar', desc: 'Responsable del desarrollo deportivo del hockey.' },
-              { rol: 'Head Coach Primera', nombre: 'A confirmar', desc: 'Entrenadora principal del equipo de primera.' },
-              { rol: 'Entrenadora Formativas', nombre: 'A confirmar', desc: 'A cargo de todas las categorías juveniles.' },
-              { rol: 'Preparadora Física', nombre: 'A confirmar', desc: 'Acondicionamiento físico de todos los planteles.' },
-            ].map((s, i) => (
+            {staff.map((s, i) => (
               <div key={i} className="staff-card">
                 <div className="staff-avatar hockey-avatar">{s.rol.charAt(0)}</div>
                 <span className="staff-rol">{s.rol}</span>
@@ -101,7 +84,7 @@ export default function Hockey() {
             {categorias.map((c, i) => (
               <div key={i} className="categoria-card hockey-cat">
                 <span className="categoria-nombre">{c.nombre}</span>
-                <p>{c.descripcion}</p>
+                <p>{c.responsables}</p>
               </div>
             ))}
           </div>

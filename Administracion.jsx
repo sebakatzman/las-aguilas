@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Administracion.css'
 
+const TEL_CLUB_DISPLAY = '+54 9 2901 46-5578'
+const TEL_CLUB_WA = '5492901465578'
+const MAIL_CLUB = 'clasaguilas@gmail.com'
+const IG_CLUB = 'https://www.instagram.com/clublasaguilas/'
+const MAPS_CLUB = 'https://maps.app.goo.gl/?q=Club+Las+Aguilas+Ushuaia'
+
 export default function Administracion() {
-  const [formSocio, setFormSocio] = useState({ nombre: '', email: '', tel: '', mensaje: '' })
-  const [formQuincho, setFormQuincho] = useState({ nombre: '', email: '', tel: '', fecha: '', evento: '' })
+  const waSocio = `https://wa.me/${TEL_CLUB_WA}?text=${encodeURIComponent('Hola, me gustaría asociarme al Club Las Águilas.')}`
+  const waQuincho = `https://wa.me/${TEL_CLUB_WA}?text=${encodeURIComponent('Hola, quiero consultar por el alquiler del quincho.')}`
+  const mailSocio = `mailto:${MAIL_CLUB}?subject=${encodeURIComponent('Quiero ser socio del Club Las Águilas')}`
+  const mailQuincho = `mailto:${MAIL_CLUB}?subject=${encodeURIComponent('Consulta por alquiler del quincho')}`
 
   return (
     <section id="administracion" className="administracion">
@@ -17,26 +25,37 @@ export default function Administracion() {
           <div className="contacto-card">
             <span className="contacto-icon">📞</span>
             <h4>Teléfono del Club</h4>
-            <p>+54 (0)2966 — A confirmar</p>
-            <span className="contacto-horario">Lunes a Viernes 9:00 – 18:00</span>
+            <p>{TEL_CLUB_DISPLAY}</p>
+            <a
+              href={`https://wa.me/${TEL_CLUB_WA}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-contacto-link"
+            >
+              WhatsApp →
+            </a>
           </div>
           <div className="contacto-card">
             <span className="contacto-icon">📧</span>
             <h4>Mail Oficial</h4>
-            <p>contacto@lasaguilas.com.ar</p>
-            <a href="mailto:contacto@lasaguilas.com.ar" className="btn-contacto-link">Enviar mail →</a>
+            <p>{MAIL_CLUB}</p>
+            <a href={`mailto:${MAIL_CLUB}`} className="btn-contacto-link">Enviar mail →</a>
           </div>
           <div className="contacto-card">
             <span className="contacto-icon">📍</span>
             <h4>Dirección</h4>
             <p>Ushuaia, Tierra del Fuego</p>
-            <span className="contacto-horario">Patagonia Argentina</span>
+            <a href={MAPS_CLUB} target="_blank" rel="noopener noreferrer" className="btn-contacto-link">
+              Ver en Google Maps →
+            </a>
           </div>
           <div className="contacto-card">
             <span className="contacto-icon">📸</span>
             <h4>Instagram</h4>
-            <p>@lasaguilasrugby</p>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="btn-contacto-link">Ver perfil →</a>
+            <p>@clublasaguilas</p>
+            <a href={IG_CLUB} target="_blank" rel="noopener noreferrer" className="btn-contacto-link">
+              Ver perfil →
+            </a>
           </div>
         </div>
 
@@ -48,40 +67,17 @@ export default function Administracion() {
               <h3>Quiero ser Socio</h3>
             </div>
             <p className="admin-box-desc">
-              Sumate a la familia de Las Águilas. Como socio vas a poder acceder a beneficios exclusivos,
-              participar en asambleas y ser parte de la historia del club más austral del planeta.
+              Sumate a la familia de Las Águilas. Para hacerte socio comunicate con
+              nosotros vía mail o WhatsApp y te contamos los pasos a seguir.
             </p>
-            <form className="admin-form" onSubmit={e => e.preventDefault()}>
-              <div className="form-row">
-                <input
-                  type="text"
-                  placeholder="Tu nombre completo"
-                  value={formSocio.nombre}
-                  onChange={e => setFormSocio({ ...formSocio, nombre: e.target.value })}
-                />
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  value={formSocio.email}
-                  onChange={e => setFormSocio({ ...formSocio, email: e.target.value })}
-                />
-              </div>
-              <input
-                type="tel"
-                placeholder="Tu teléfono"
-                value={formSocio.tel}
-                onChange={e => setFormSocio({ ...formSocio, tel: e.target.value })}
-              />
-              <textarea
-                placeholder="¿Alguna consulta adicional? (opcional)"
-                rows={3}
-                value={formSocio.mensaje}
-                onChange={e => setFormSocio({ ...formSocio, mensaje: e.target.value })}
-              />
-              <button type="submit" className="btn-submit verde">
-                Quiero ser socio 🦅
-              </button>
-            </form>
+            <div className="cta-buttons">
+              <a href={waSocio} target="_blank" rel="noopener noreferrer" className="btn-submit verde">
+                💬 WhatsApp {TEL_CLUB_DISPLAY}
+              </a>
+              <a href={mailSocio} className="btn-submit verde alt">
+                📧 {MAIL_CLUB}
+              </a>
+            </div>
           </div>
 
           {/* Alquilar quincho */}
@@ -91,47 +87,17 @@ export default function Administracion() {
               <h3>Alquilar el Quincho</h3>
             </div>
             <p className="admin-box-desc">
-              El club cuenta con instalaciones disponibles para alquilar. Ideal para cumpleaños, 
-              eventos corporativos, reuniones y celebraciones. Consultanos disponibilidad y precios.
+              El club cuenta con instalaciones disponibles para alquilar. Para consultar
+              disponibilidad y precios, comunicate vía mail o WhatsApp.
             </p>
-            <form className="admin-form" onSubmit={e => e.preventDefault()}>
-              <div className="form-row">
-                <input
-                  type="text"
-                  placeholder="Tu nombre completo"
-                  value={formQuincho.nombre}
-                  onChange={e => setFormQuincho({ ...formQuincho, nombre: e.target.value })}
-                />
-                <input
-                  type="email"
-                  placeholder="Tu email"
-                  value={formQuincho.email}
-                  onChange={e => setFormQuincho({ ...formQuincho, email: e.target.value })}
-                />
-              </div>
-              <div className="form-row">
-                <input
-                  type="tel"
-                  placeholder="Tu teléfono"
-                  value={formQuincho.tel}
-                  onChange={e => setFormQuincho({ ...formQuincho, tel: e.target.value })}
-                />
-                <input
-                  type="date"
-                  value={formQuincho.fecha}
-                  onChange={e => setFormQuincho({ ...formQuincho, fecha: e.target.value })}
-                />
-              </div>
-              <input
-                type="text"
-                placeholder="Tipo de evento"
-                value={formQuincho.evento}
-                onChange={e => setFormQuincho({ ...formQuincho, evento: e.target.value })}
-              />
-              <button type="submit" className="btn-submit dorado">
-                Consultar disponibilidad 🏠
-              </button>
-            </form>
+            <div className="cta-buttons">
+              <a href={waQuincho} target="_blank" rel="noopener noreferrer" className="btn-submit dorado">
+                💬 WhatsApp {TEL_CLUB_DISPLAY}
+              </a>
+              <a href={mailQuincho} className="btn-submit dorado alt">
+                📧 {MAIL_CLUB}
+              </a>
+            </div>
           </div>
         </div>
       </div>

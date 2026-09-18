@@ -10,7 +10,9 @@ export default function Footer() {
             <h3 className="footer-logo">🦅 Club Las Águilas</h3>
             <p className="footer-slogan">Rugby & Hockey — Ushuaia, Tierra del Fuego</p>
             <p className="footer-desc">
-              Más de 40 años de historia deportiva en la Patagonia austral. Formando jugadores, personas y comunidad.
+              Una historia que comenzó hace 36 años y hoy sigue escribiendo grandes capítulos deportivos y sociales.
+              <br />
+              <strong>AGUANTE EL FUCSIA Y NEGRO</strong>
             </p>
           </div>
 
@@ -20,7 +22,6 @@ export default function Footer() {
               <li><a href="#institucional">Institucional</a></li>
               <li><a href="#rugby">Rugby</a></li>
               <li><a href="#hockey">Hockey</a></li>
-              <li><a href="#titulos">Títulos</a></li>
               <li><a href="#indumentaria">Indumentaria</a></li>
               <li><a href="#sponsors">Sponsors</a></li>
             </ul>
@@ -30,12 +31,11 @@ export default function Footer() {
             <h4>Contacto</h4>
             <ul>
               <li>📍 Ushuaia, Tierra del Fuego</li>
-              <li>📧 <a href="mailto:contacto@lasaguilas.com.ar">contacto@lasaguilas.com.ar</a></li>
+              <li>📧 <a href="mailto:clasaguilas@gmail.com">clasaguilas@gmail.com</a></li>
+              <li>📞 <a href="https://wa.me/5492901465578" target="_blank" rel="noopener noreferrer">+54 9 2901 46-5578</a></li>
             </ul>
             <div className="footer-social">
-              <a href="#" aria-label="Facebook">📘</a>
-              <a href="#" aria-label="Instagram">📸</a>
-              <a href="#" aria-label="Twitter">🐦</a>
+              <a href="https://www.instagram.com/clublasaguilas/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
             </div>
           </div>
         </div>

@@ -6,7 +6,6 @@ import Institucional from './Institucional.jsx'
 import Autoridades from './Autoridades.jsx'
 import Rugby from './Rugby.jsx'
 import Hockey from './Hockey.jsx'
-import Titulos from './Titulos.jsx'
 import Novedades from './Novedades.jsx'
 import Indumentaria from './Indumentaria.jsx'
 import Sponsors from './Sponsors.jsx'
@@ -22,7 +21,6 @@ export default function App() {
       <Autoridades />
       <Rugby />
       <Hockey />
-      <Titulos />
       <Novedades />
       <Indumentaria />
       <Sponsors />

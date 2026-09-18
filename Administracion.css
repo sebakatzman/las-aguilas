@@ -186,3 +186,41 @@
   .contacto-cards { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
+
+.admin-box .cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.admin-box .cta-buttons .btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 0;
+}
+
+.btn-submit.verde.alt {
+  background: transparent;
+  color: var(--fucsia);
+  border: 2px solid var(--fucsia);
+}
+
+.btn-submit.verde.alt:hover {
+  background: var(--fucsia);
+  color: #fff;
+}
+
+.btn-submit.dorado.alt {
+  background: transparent;
+  color: var(--fucsia-oscuro);
+  border: 2px solid var(--fucsia-oscuro);
+}
+
+.btn-submit.dorado.alt:hover {
+  background: var(--fucsia-oscuro);
+  color: #fff;
+}
