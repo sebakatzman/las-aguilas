@@ -1,0 +1,64 @@
+.socio-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  background: var(--fucsia);
+  color: var(--blanco);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 25px rgba(224, 0, 122, 0.45), 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  animation: socio-pulse 2.4s ease-in-out infinite;
+}
+
+.socio-btn:hover,
+.socio-btn:focus-visible {
+  background: var(--fucsia-claro);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(224, 0, 122, 0.55), 0 4px 10px rgba(0, 0, 0, 0.4);
+  outline: none;
+  animation: none;
+}
+
+.socio-btn:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.socio-btn-text {
+  white-space: nowrap;
+}
+
+@keyframes socio-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 25px rgba(224, 0, 122, 0.45), 0 2px 6px rgba(0, 0, 0, 0.35);
+  }
+  50% {
+    box-shadow: 0 10px 25px rgba(224, 0, 122, 0.75), 0 2px 12px rgba(224, 0, 122, 0.5);
+  }
+}
+
+@media (max-width: 640px) {
+  .socio-btn {
+    right: 14px;
+    bottom: 16px;
+    padding: 12px 18px;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .socio-btn {
+    animation: none;
+    transition: none;
+  }
+}

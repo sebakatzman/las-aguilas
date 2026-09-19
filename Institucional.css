@@ -31,6 +31,34 @@
   font-size: 0.85rem;
 }
 
+.inst-historia-texto.colapsado p:last-child {
+  mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+}
+
+.inst-toggle {
+  margin-top: 8px;
+  background: transparent;
+  border: 1px solid var(--fucsia);
+  color: var(--fucsia);
+  padding: 10px 22px;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.inst-toggle:hover,
+.inst-toggle:focus-visible {
+  background: var(--fucsia);
+  color: var(--blanco);
+  transform: translateY(-1px);
+  outline: none;
+}
+
 .inst-fotos-historia {
   display: flex;
   flex-direction: column;

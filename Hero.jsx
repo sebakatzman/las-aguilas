@@ -7,9 +7,9 @@ const slides = [
   '/Fotos/_DSC9629.JPG',        // rugby
   '/Fotos/nacionalhockey.jpg',  // hockey
   '/Fotos/_DSC9759.JPG',        // rugby
-  '/Fotos/1.jpg',               // hockey
+  '/Fotos/hok4.jpg',            // hockey (4ª de Fotos Actuales)
   '/Fotos/_DSC9892.JPG',        // rugby
-  '/Fotos/3.jpg',               // hockey
+  '/Fotos/hok3.jpg',            // hockey (3ª de Fotos Actuales)
 ]
 
 export default function Hero() {

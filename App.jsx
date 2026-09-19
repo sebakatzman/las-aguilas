@@ -11,6 +11,7 @@ import Indumentaria from './Indumentaria.jsx'
 import Sponsors from './Sponsors.jsx'
 import Administracion from './Administracion.jsx'
 import Footer from './Footer.jsx'
+import SocioButton from './SocioButton.jsx'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
       <Sponsors />
       <Administracion />
       <Footer />
+      <SocioButton />
     </div>
   )
 }
